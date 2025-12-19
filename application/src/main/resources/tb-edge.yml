@@ -107,16 +107,16 @@ server:
 # Cloud configuration
 cloud:
   # Routing key for edge instance, typically a UUID
-  routingKey: "${CLOUD_ROUTING_KEY:}"
+  routingKey: "${CLOUD_ROUTING_KEY:2d652ffd-1c4a-902e-56df-806b7eff0d1f}"
   # Secret key for secure communication with the cloud
-  secret: "${CLOUD_ROUTING_SECRET:}"
+  secret: "${CLOUD_ROUTING_SECRET:dr6f8atagb0fdjd2d6d4}"
   # Reconnection timeout in milliseconds if cloud connectivity is lost
   reconnect_timeout: "${CLOUD_RECONNECT_TIMEOUT:3000}"
   # Timeout in seconds for packaging uplink data to the cloud
   uplink_pack_timeout_sec: "${CLOUD_UPLINK_PACK_TIMEOUT_SEC:60}"
   rpc:
     # Hostname or IP of the ThingsBoard platform, e.g. thingsboard.cloud, demo.thingsboard.io, X.X.X.X or localhost
-    host: "${CLOUD_RPC_HOST:localhost}"
+    host: "${CLOUD_RPC_HOST:192.168.0.1}"
     # Port for RPC communication with the ThingsBoard server
     port: "${CLOUD_RPC_PORT:7070}"
     # Timeout in seconds for terminating an RPC channel

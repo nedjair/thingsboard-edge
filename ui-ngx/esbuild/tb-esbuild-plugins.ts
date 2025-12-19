@@ -50,6 +50,33 @@ const resolveJQueryPlugin: Plugin = {
   }
 };
 
+const resolveFlotPlugin: Plugin = {
+  name: 'tb-resolve-flot-plugin',
+  setup(build: PluginBuild) {
+    const pathModule = require('path');
+
+    // Mapping des chemins flot
+    const flotMappings: Record<string, string> = {
+      'flot/src/jquery.flot.js': 'node_modules/flot/jquery.flot.js',
+      'flot/lib/jquery.colorhelpers.js': 'node_modules/flot/jquery.colorhelpers.js',
+      'flot/src/plugins/jquery.flot.time.js': 'node_modules/flot/jquery.flot.time.js',
+      'flot/src/plugins/jquery.flot.selection.js': 'node_modules/flot/jquery.flot.selection.js',
+      'flot/src/plugins/jquery.flot.pie.js': 'node_modules/flot/jquery.flot.pie.js',
+      'flot/src/plugins/jquery.flot.crosshair.js': 'node_modules/flot/jquery.flot.crosshair.js',
+      'flot/src/plugins/jquery.flot.stack.js': 'node_modules/flot/jquery.flot.stack.js',
+      'flot/src/plugins/jquery.flot.symbol.js': 'node_modules/flot/jquery.flot.symbol.js',
+    };
+
+    build.onResolve({filter: /^flot\//}, (args) => {
+      const mapping = flotMappings[args.path];
+      if (mapping) {
+        return {path: pathModule.resolve(process.cwd(), mapping)};
+      }
+      return null;
+    });
+  }
+};
+
 const compressFileTypes = ['.js', '.css', '.html', '.svg', '.png', '.jpg', '.ttf', '.gif', '.woff', '.woff2', '.eot', '.json'];
 const compressThreshold = 10240;
 
@@ -101,4 +128,4 @@ function isProduction(): boolean {
   return production;
 }
 
-export default [defineTbVariablesPlugin, resolveJQueryPlugin, compressorPlugin];
+export default [defineTbVariablesPlugin, resolveJQueryPlugin, resolveFlotPlugin, compressorPlugin];

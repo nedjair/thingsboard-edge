@@ -19,6 +19,7 @@
     "**/*.spec.ts"
   ],
   "include": [
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "../node_modules/ngx-flowchart/projects/ngx-flowchart/src/**/*"
   ]
 }

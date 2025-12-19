@@ -1950,6 +1950,11 @@
             <url>https://repo1.maven.org/maven2/</url>
         </repository>
         <repository>
+            <id>google-maven-central</id>
+            <name>Google Maven Central</name>
+            <url>https://maven.google.com</url>
+        </repository>
+        <repository>
             <id>thingsboard-repo</id>
             <url>https://repo.thingsboard.io/artifactory/libs-release-public</url>
         </repository>

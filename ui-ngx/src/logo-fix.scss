@@ -1,0 +1,26 @@
+/* Force logo size globally */
+tb-logo {
+    max-width: 150px !important;
+    max-height: 36px !important;
+    display: block !important;
+}
+
+tb-logo img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
+
+/* Specific fix for sidebar logo */
+.tb-nav-header .tb-logo-title {
+    max-width: 150px !important;
+    max-height: 36px !important;
+}
+
+.tb-nav-header .tb-logo-title img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+}

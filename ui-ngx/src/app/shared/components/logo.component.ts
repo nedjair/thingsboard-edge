@@ -30,7 +30,7 @@ import { UrlHolder } from '@shared/pipe/image.pipe';
 export class LogoComponent implements OnInit {
 
   @Input()
-  src: string | UrlHolder = 'assets/logo_title_white_edge.svg';
+  src: string | UrlHolder = 'assets/logo-mobilis3.svg';
 
   @Input()
   link: string | UrlTree;
@@ -41,15 +41,16 @@ export class LogoComponent implements OnInit {
   isExternal = false;
 
   constructor(private authService: AuthService,
-              private store: Store<AppState>) {
+    private store: Store<AppState>) {
   }
 
   ngOnInit() {
-    if (!this.link) {
-      const authState = getCurrentAuthState(this.store);
-      this.link = this.authService.defaultUrl(true, authState);
-    }
-    if (typeof this.link === 'string' && this.link.startsWith('http')) {
+    // Désactivé: Le logo n'a plus de lien par défaut
+    // if (!this.link) {
+    //   const authState = getCurrentAuthState(this.store);
+    //   this.link = this.authService.defaultUrl(true, authState);
+    // }
+    if (this.link && typeof this.link === 'string' && this.link.startsWith('http')) {
       this.isExternal = true;
     }
   }

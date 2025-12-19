@@ -38,6 +38,33 @@
       "@home/*": [
         "src/app/modules/home/*"
       ],
+      "ngx-flowchart": [
+        "node_modules/ngx-flowchart/dist/ngx-flowchart"
+      ],
+      "flot/src/jquery.flot.js": [
+        "node_modules/flot/jquery.flot.js"
+      ],
+      "flot/lib/jquery.colorhelpers.js": [
+        "node_modules/flot/jquery.colorhelpers.js"
+      ],
+      "flot/src/plugins/jquery.flot.time.js": [
+        "node_modules/flot/jquery.flot.time.js"
+      ],
+      "flot/src/plugins/jquery.flot.selection.js": [
+        "node_modules/flot/jquery.flot.selection.js"
+      ],
+      "flot/src/plugins/jquery.flot.pie.js": [
+        "node_modules/flot/jquery.flot.pie.js"
+      ],
+      "flot/src/plugins/jquery.flot.crosshair.js": [
+        "node_modules/flot/jquery.flot.crosshair.js"
+      ],
+      "flot/src/plugins/jquery.flot.stack.js": [
+        "node_modules/flot/jquery.flot.stack.js"
+      ],
+      "flot/src/plugins/jquery.flot.symbol.js": [
+        "node_modules/flot/jquery.flot.symbol.js"
+      ],
       "jszip": [
         "node_modules/jszip/dist/jszip.min.js"
       ],

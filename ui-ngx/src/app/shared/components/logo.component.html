@@ -15,17 +15,20 @@
     limitations under the License.
 
 -->
+@if (link) {
 @if (isExternal) {
-  <a [href]="link" [target]="target">
-    <ng-container *ngTemplateOutlet="logo"></ng-container>
-  </a>
+<a [href]="link" [target]="target">
+  <ng-container *ngTemplateOutlet="logo"></ng-container>
+</a>
 } @else {
-  <a [routerLink]="link" [target]="target">
-    <ng-container *ngTemplateOutlet="logo"></ng-container>
-  </a>
+<a [routerLink]="link" [target]="target">
+  <ng-container *ngTemplateOutlet="logo"></ng-container>
+</a>
+}
+} @else {
+<ng-container *ngTemplateOutlet="logo"></ng-container>
 }
 
 <ng-template #logo>
-  <img [src]="src" aria-label="logo" alt="Logo"/>
+  <img [src]="src" aria-label="logo" alt="Logo" />
 </ng-template>
-
